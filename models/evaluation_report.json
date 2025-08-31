@@ -1,0 +1,101 @@
+{
+  "timestamp": "2025-09-01T00:32:39.242612",
+  "model_rankings": [
+    {
+      "model_name": "xgboost",
+      "weighted_mae": 0.5649668566812034,
+      "status": "success",
+      "rank": 1
+    },
+    {
+      "model_name": "random_forest",
+      "weighted_mae": 0.5673434499298946,
+      "status": "success",
+      "rank": 2
+    },
+    {
+      "model_name": "lasso_regression",
+      "weighted_mae": 0.5866757807393639,
+      "status": "success",
+      "rank": 3
+    },
+    {
+      "model_name": "ridge_regression",
+      "weighted_mae": 0.6108099489941281,
+      "status": "success",
+      "rank": 4
+    },
+    {
+      "model_name": "linear_regression",
+      "weighted_mae": 0.6109522852723799,
+      "status": "success",
+      "rank": 5
+    },
+    {
+      "model_name": "knn",
+      "weighted_mae": 0.6227905195245993,
+      "status": "success",
+      "rank": 6
+    }
+  ],
+  "cross_validation_summary": {
+    "total_models": 6,
+    "mean_weighted_mae": 0.5939231401902615,
+    "std_weighted_mae": 0.02238285129082547,
+    "best_weighted_mae": 0.5649668566812034,
+    "worst_weighted_mae": 0.6227905195245993
+  },
+  "error_analysis": {
+    "total_models": 6,
+    "target_error_summary": {
+      "Tg": {
+        "mean_mae": 0.6194880310341058,
+        "std_mae": 0.025519475826080423,
+        "best_mae": 0.5822434594331705,
+        "worst_mae": 0.6420655026226819
+      },
+      "FFV": {
+        "mean_mae": 0.48753280272381544,
+        "std_mae": 0.051452538114681756,
+        "best_mae": 0.39137079435465616,
+        "worst_mae": 0.531116568071959
+      },
+      "Tc": {
+        "mean_mae": 0.6120968422363503,
+        "std_mae": 0.025278191840129638,
+        "best_mae": 0.5739023033667857,
+        "worst_mae": 0.6425406514591524
+      },
+      "Density": {
+        "mean_mae": 0.6518611806534765,
+        "std_mae": 0.025304713257089537,
+        "best_mae": 0.6175647013692482,
+        "worst_mae": 0.6766917547682378
+      },
+      "Rg": {
+        "mean_mae": 0.6651868532664201,
+        "std_mae": 0.02876004427048395,
+        "best_mae": 0.6229021103907649,
+        "worst_mae": 0.6910256757898026
+      }
+    }
+  },
+  "interpretability_analysis": {
+    "total_models": 6,
+    "interpretable_models": 6,
+    "complexity_distribution": {
+      "1": 3,
+      "2": 3
+    },
+    "feature_importance_available": 6
+  },
+  "recommendations": [
+    "Use xgboost as primary model (Rank 1, Weighted MAE: 0.5650)",
+    "Consider random_forest as backup model (Rank 2, Weighted MAE: 0.5673)",
+    "Focus improvement efforts on Rg (highest mean MAE: 0.6652)",
+    "Perform feature engineering to improve model performance",
+    "Consider ensemble methods to combine best performing models",
+    "Implement cross-validation in production to monitor model drift",
+    "Regularly retrain models with new data to maintain performance"
+  ]
+}

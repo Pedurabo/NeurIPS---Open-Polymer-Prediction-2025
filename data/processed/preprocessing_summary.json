@@ -1,0 +1,297 @@
+{
+  "target_columns": [
+    "Tg",
+    "FFV",
+    "Tc",
+    "Density",
+    "Rg"
+  ],
+  "imputation_strategies": {
+    "Tg": "knn",
+    "FFV": "iterative",
+    "Tc": "knn",
+    "Density": "knn",
+    "Rg": "knn"
+  },
+  "preprocessing_stats": {
+    "imputation": {
+      "Tg": {
+        "strategy": "knn",
+        "neighbors": 5,
+        "imputed_count": "7462"
+      },
+      "FFV": {
+        "strategy": "iterative",
+        "max_iter": 10,
+        "neighbors": null,
+        "imputed_count": "943"
+      },
+      "Tc": {
+        "strategy": "knn",
+        "neighbors": 5,
+        "imputed_count": "7236"
+      },
+      "Density": {
+        "strategy": "knn",
+        "neighbors": 5,
+        "imputed_count": "7360"
+      },
+      "Rg": {
+        "strategy": "knn",
+        "neighbors": 5,
+        "imputed_count": "7359"
+      }
+    },
+    "outliers": {
+      "Tg": {
+        "method": "iqr",
+        "threshold": 1.5,
+        "outliers_detected": "87",
+        "lower_bound": -43.224477658,
+        "upper_bound": 235.596753734,
+        "action": "capped"
+      },
+      "FFV": {
+        "method": "iqr",
+        "threshold": 1.5,
+        "outliers_detected": "333",
+        "lower_bound": 0.30761658500000005,
+        "upper_bound": 0.42348406499999997,
+        "action": "capped"
+      },
+      "Tc": {
+        "method": "iqr",
+        "threshold": 1.5,
+        "outliers_detected": "122",
+        "lower_bound": 0.12972499999999992,
+        "upper_bound": 0.37472500000000003,
+        "action": "capped"
+      },
+      "Density": {
+        "method": "iqr",
+        "threshold": 1.5,
+        "outliers_detected": "176",
+        "lower_bound": 0.7980013294000003,
+        "upper_bound": 1.1694280765999996,
+        "action": "capped"
+      },
+      "Rg": {
+        "method": "iqr",
+        "threshold": 1.5,
+        "outliers_detected": "188",
+        "lower_bound": 10.616468643000005,
+        "upper_bound": 21.531247354999998,
+        "action": "capped"
+      }
+    },
+    "scaling": {
+      "method": "robust",
+      "columns": [
+        "Tg",
+        "FFV",
+        "Tc",
+        "Density",
+        "Rg"
+      ],
+      "scaler_type": "RobustScaler",
+      "feature_names": [
+        "Tg",
+        "FFV",
+        "Tc",
+        "Density",
+        "Rg"
+      ]
+    }
+  },
+  "random_state": 42,
+  "missing_analysis": {
+    "overall": {
+      "counts": {
+        "Tg": 7462,
+        "FFV": 943,
+        "Tc": 7236,
+        "Density": 7360,
+        "Rg": 7359
+      },
+      "percentages": {
+        "Tg": 93.59086918349429,
+        "FFV": 11.827417534177851,
+        "Tc": 90.75630252100841,
+        "Density": 92.31155148626615,
+        "Rg": 92.29900915590117
+      },
+      "total_missing": "30360",
+      "total_percentage": 76.15702997616958
+    },
+    "patterns": {
+      "unique_patterns": 16,
+      "most_common_pattern": [
+        "True",
+        "False",
+        "True",
+        "True",
+        "True"
+      ],
+      "most_common_count": "6681"
+    },
+    "targets": {
+      "Tg": {
+        "available_samples": 511,
+        "missing_samples": "7462",
+        "coverage_percentage": 6.409130816505707,
+        "value_range": [
+          -148.0297376,
+          472.25
+        ],
+        "mean": 96.45231368400195,
+        "std": 111.22827910797992
+      },
+      "FFV": {
+        "available_samples": 7030,
+        "missing_samples": "943",
+        "coverage_percentage": 88.17258246582215,
+        "value_range": [
+          0.2269924,
+          0.77709707
+        ],
+        "mean": 0.3672119955170697,
+        "std": 0.029608779125387855
+      },
+      "Tc": {
+        "available_samples": 737,
+        "missing_samples": "7236",
+        "coverage_percentage": 9.243697478991598,
+        "value_range": [
+          0.0465,
+          0.524
+        ],
+        "mean": 0.256334092524391,
+        "std": 0.08953784956659465
+      },
+      "Density": {
+        "available_samples": 613,
+        "missing_samples": "7360",
+        "coverage_percentage": 7.688448513733852,
+        "value_range": [
+          0.748691234,
+          1.840998909
+        ],
+        "mean": 0.9854843785473083,
+        "std": 0.14618915391555007
+      },
+      "Rg": {
+        "available_samples": 614,
+        "missing_samples": "7359",
+        "coverage_percentage": 7.7009908440988335,
+        "value_range": [
+          9.7283551,
+          34.672905605
+        ],
+        "mean": 16.419786709543974,
+        "std": 4.608640086480216
+      }
+    }
+  },
+  "imputation_info": {
+    "Tg": {
+      "strategy": "knn",
+      "neighbors": 5,
+      "imputed_count": "7462"
+    },
+    "FFV": {
+      "strategy": "iterative",
+      "max_iter": 10,
+      "neighbors": null,
+      "imputed_count": "943"
+    },
+    "Tc": {
+      "strategy": "knn",
+      "neighbors": 5,
+      "imputed_count": "7236"
+    },
+    "Density": {
+      "strategy": "knn",
+      "neighbors": 5,
+      "imputed_count": "7360"
+    },
+    "Rg": {
+      "strategy": "knn",
+      "neighbors": 5,
+      "imputed_count": "7359"
+    }
+  },
+  "outlier_info": {
+    "Tg": {
+      "method": "iqr",
+      "threshold": 1.5,
+      "outliers_detected": "87",
+      "lower_bound": -43.224477658,
+      "upper_bound": 235.596753734,
+      "action": "capped"
+    },
+    "FFV": {
+      "method": "iqr",
+      "threshold": 1.5,
+      "outliers_detected": "333",
+      "lower_bound": 0.30761658500000005,
+      "upper_bound": 0.42348406499999997,
+      "action": "capped"
+    },
+    "Tc": {
+      "method": "iqr",
+      "threshold": 1.5,
+      "outliers_detected": "122",
+      "lower_bound": 0.12972499999999992,
+      "upper_bound": 0.37472500000000003,
+      "action": "capped"
+    },
+    "Density": {
+      "method": "iqr",
+      "threshold": 1.5,
+      "outliers_detected": "176",
+      "lower_bound": 0.7980013294000003,
+      "upper_bound": 1.1694280765999996,
+      "action": "capped"
+    },
+    "Rg": {
+      "method": "iqr",
+      "threshold": 1.5,
+      "outliers_detected": "188",
+      "lower_bound": 10.616468643000005,
+      "upper_bound": 21.531247354999998,
+      "action": "capped"
+    }
+  },
+  "scaling_info": {
+    "method": "robust",
+    "columns": [
+      "Tg",
+      "FFV",
+      "Tc",
+      "Density",
+      "Rg"
+    ],
+    "scaler_type": "RobustScaler",
+    "feature_names": [
+      "Tg",
+      "FFV",
+      "Tc",
+      "Density",
+      "Rg"
+    ]
+  },
+  "final_shapes": {
+    "original": [
+      7973,
+      7
+    ],
+    "final_train": [
+      6378,
+      7
+    ],
+    "final_val": [
+      1595,
+      7
+    ]
+  }
+}

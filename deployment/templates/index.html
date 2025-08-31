@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polymer Property Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .input-section {
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            display: none;
+        }
+        .property {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 3px;
+        }
+        .property-name {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .property-value {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .error {
+            color: #e74c3c;
+            background-color: #fdf2f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Polymer Property Prediction</h1>
+        <p style="text-align: center; color: #7f8c8d; margin-bottom: 30px;">
+            Predict polymer properties from SMILES molecular structure
+        </p>
+        
+        <div class="input-section">
+            <label for="smiles">SMILES Molecular Structure:</label>
+            <input type="text" id="smiles" placeholder="e.g., CCO, CC(C)O, c1ccccc1" />
+        </div>
+        
+        <button onclick="predict()" id="predictBtn">🚀 Predict Properties</button>
+        
+        <div class="error" id="error"></div>
+        
+        <div class="results" id="results">
+            <h3>📊 Predicted Properties</h3>
+            <div class="property">
+                <span class="property-name">Glass Transition Temperature (Tg):</span>
+                <span class="property-value" id="tg">-</span>
+            </div>
+            <div class="property">
+                <span class="property-name">Fractional Free Volume (FFV):</span>
+                <span class="property-value" id="ffv">-</span>
+            </div>
+            <div class="property">
+                <span class="property-name">Thermal Conductivity (Tc):</span>
+                <span class="property-value" id="tc">-</span>
+            </div>
+            <div class="property">
+                <span class="property-name">Density:</span>
+                <span class="property-value" id="density">-</span>
+            </div>
+            <div class="property">
+                <span class="property-name">Radius of Gyration (Rg):</span>
+                <span class="property-value" id="rg">-</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function predict() {
+            const smiles = document.getElementById('smiles').value.trim();
+            const predictBtn = document.getElementById('predictBtn');
+            const results = document.getElementById('results');
+            const error = document.getElementById('error');
+            
+            if (!smiles) {
+                showError('Please enter a SMILES string');
+                return;
+            }
+            
+            // Show loading
+            predictBtn.disabled = true;
+            predictBtn.textContent = '🔬 Predicting...';
+            error.style.display = 'none';
+            
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ smiles: smiles })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Update results
+                    document.getElementById('tg').textContent = data.predictions.Tg.toFixed(2) + ' K';
+                    document.getElementById('ffv').textContent = data.predictions.FFV.toFixed(3);
+                    document.getElementById('tc').textContent = data.predictions.Tc.toFixed(3) + ' W/m·K';
+                    document.getElementById('density').textContent = data.predictions.Density.toFixed(2) + ' g/cm³';
+                    document.getElementById('rg').textContent = data.predictions.Rg.toFixed(2) + ' Å';
+                    
+                    results.style.display = 'block';
+                } else {
+                    showError(data.error || 'Prediction failed');
+                }
+            } catch (err) {
+                showError('Network error: ' + err.message);
+            } finally {
+                // Reset button
+                predictBtn.disabled = false;
+                predictBtn.textContent = '🚀 Predict Properties';
+            }
+        }
+        
+        function showError(message) {
+            const error = document.getElementById('error');
+            error.textContent = message;
+            error.style.display = 'block';
+        }
+        
+        // Allow Enter key to submit
+        document.getElementById('smiles').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                predict();
+            }
+        });
+    </script>
+</body>
+</html>

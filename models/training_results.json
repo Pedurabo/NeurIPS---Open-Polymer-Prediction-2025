@@ -1,0 +1,299 @@
+{
+  "linear_regression": {
+    "model": "LinearRegression()",
+    "config": {
+      "model_type": "linear",
+      "params": {}
+    },
+    "train_time": 0.9121720790863037,
+    "validation_metrics": {
+      "Tg": {
+        "mae": 0.6330166928461278,
+        "mse": 0.6370047892067319,
+        "rmse": 0.7981257978581646,
+        "r2": -0.2040392167869387
+      },
+      "FFV": {
+        "mae": 0.5217994763604364,
+        "mse": 0.4582191803112926,
+        "rmse": 0.6769188875421431,
+        "r2": 0.33493523223814814
+      },
+      "Tc": {
+        "mae": 0.6307721607144819,
+        "mse": 0.6177541684459517,
+        "rmse": 0.7859733891461922,
+        "r2": -0.12434254517992271
+      },
+      "Density": {
+        "mae": 0.6658838375492058,
+        "mse": 0.682958456160977,
+        "rmse": 0.8264130058033797,
+        "r2": -0.15460251816568138
+      },
+      "Rg": {
+        "mae": 0.6793689402193341,
+        "mse": 0.7290601406641138,
+        "rmse": 0.8538501863114594,
+        "r2": -0.16189814445948958
+      },
+      "weighted_mae": 0.6261682215379172
+    },
+    "status": "success"
+  },
+  "ridge_regression": {
+    "model": "Ridge()",
+    "config": {
+      "model_type": "linear",
+      "params": {
+        "alpha": 1.0
+      }
+    },
+    "train_time": 0.17026686668395996,
+    "validation_metrics": {
+      "Tg": {
+        "mae": 0.632945520372131,
+        "mse": 0.6368248023784546,
+        "rmse": 0.7980130339652697,
+        "r2": -0.20369901337964436
+      },
+      "FFV": {
+        "mae": 0.5218260532577503,
+        "mse": 0.45831059520999756,
+        "rmse": 0.6769864069610243,
+        "r2": 0.3348025515669988
+      },
+      "Tc": {
+        "mae": 0.6307284503106586,
+        "mse": 0.6176870765911525,
+        "rmse": 0.785930707245335,
+        "r2": -0.1242204347505016
+      },
+      "Density": {
+        "mae": 0.6658227441896623,
+        "mse": 0.6828327496858637,
+        "rmse": 0.8263369468236693,
+        "r2": -0.1543900000960885
+      },
+      "Rg": {
+        "mae": 0.6792966424753833,
+        "mse": 0.7289090171116949,
+        "rmse": 0.8537616863690329,
+        "r2": -0.1616572998907826
+      },
+      "weighted_mae": 0.6261238821211171
+    },
+    "status": "success"
+  },
+  "lasso_regression": {
+    "model": "Lasso(alpha=0.1)",
+    "config": {
+      "model_type": "linear",
+      "params": {
+        "alpha": 0.1
+      }
+    },
+    "train_time": 1.7833523750305176,
+    "validation_metrics": {
+      "Tg": {
+        "mae": 0.5814687236887724,
+        "mse": 0.5295441114457284,
+        "rmse": 0.7276978160237452,
+        "r2": -0.0009216382709611448
+      },
+      "FFV": {
+        "mae": 0.5118659342320637,
+        "mse": 0.4345112003818177,
+        "rmse": 0.6591746357239617,
+        "r2": 0.3693452762594116
+      },
+      "Tc": {
+        "mae": 0.5894589616245529,
+        "mse": 0.5337545531608769,
+        "rmse": 0.7305850759226313,
+        "r2": 0.028540828284546738
+      },
+      "Density": {
+        "mae": 0.6182157321748191,
+        "mse": 0.5857207046341951,
+        "rmse": 0.76532392137852,
+        "r2": 0.009786621116208094
+      },
+      "Rg": {
+        "mae": 0.6268182468629455,
+        "mse": 0.6267384573084968,
+        "rmse": 0.791668148474155,
+        "r2": 0.0011712203264748755
+      },
+      "weighted_mae": 0.5855655197166307
+    },
+    "status": "success"
+  },
+  "random_forest": {
+    "model": "RandomForestRegressor(max_depth=10, random_state=42)",
+    "config": {
+      "model_type": "ensemble",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 10,
+        "random_state": 42
+      }
+    },
+    "train_time": 78.86897492408752,
+    "validation_metrics": {
+      "Tg": {
+        "mae": 0.5854194507410603,
+        "mse": 0.5349604238235375,
+        "rmse": 0.7314098876987769,
+        "r2": -0.011159320347687407
+      },
+      "FFV": {
+        "mae": 0.4370020495298578,
+        "mse": 0.32587287600790016,
+        "rmse": 0.5708527621093727,
+        "r2": 0.5270242322574821
+      },
+      "Tc": {
+        "mae": 0.5749057605267299,
+        "mse": 0.49784879504205154,
+        "rmse": 0.7055840099109755,
+        "r2": 0.09389104934657888
+      },
+      "Density": {
+        "mae": 0.6165059731783601,
+        "mse": 0.582070270589366,
+        "rmse": 0.762935299084638,
+        "r2": 0.015958007241580363
+      },
+      "Rg": {
+        "mae": 0.6220113007717718,
+        "mse": 0.6130618852380787,
+        "rmse": 0.7829826851457692,
+        "r2": 0.02296747940698085
+      },
+      "weighted_mae": 0.567168906949556
+    },
+    "status": "success"
+  },
+  "xgboost": {
+    "model": "XGBRegressor(base_score=None, booster=None, callbacks=None,\n             colsample_bylevel=None, colsample_bynode=None,\n             colsample_bytree=None, device=None, early_stopping_rounds=None,\n             enable_categorical=False, eval_metric=None, feature_types=None,\n             feature_weights=None, gamma=None, grow_policy=None,\n             importance_type=None, interaction_constraints=None,\n             learning_rate=0.1, max_bin=None, max_cat_threshold=None,\n             max_cat_to_onehot=None, max_delta_step=None, max_depth=6,\n             max_leaves=None, min_child_weight=None, missing=nan,\n             monotone_constraints=None, multi_strategy=None, n_estimators=100,\n             n_jobs=None, num_parallel_tree=None, ...)",
+    "config": {
+      "model_type": "gradient_boosting",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "random_state": 42
+      }
+    },
+    "train_time": 4.384178161621094,
+    "validation_metrics": {
+      "Tg": {
+        "mae": 0.6360787447837901,
+        "mse": 0.6347424078825509,
+        "rmse": 0.7967072284613407,
+        "r2": -0.19976296033832952
+      },
+      "FFV": {
+        "mae": 0.39037905745228685,
+        "mse": 0.26555715633307314,
+        "rmse": 0.51532238097435,
+        "r2": 0.6145671851096004
+      },
+      "Tc": {
+        "mae": 0.606570980626165,
+        "mse": 0.5644287873903638,
+        "rmse": 0.7512847578584061,
+        "r2": -0.027287765590888746
+      },
+      "Density": {
+        "mae": 0.6667287064351572,
+        "mse": 0.6927406843488143,
+        "rmse": 0.8323104495011547,
+        "r2": -0.17114025219190188
+      },
+      "Rg": {
+        "mae": 0.6774330565169893,
+        "mse": 0.7290522386121406,
+        "rmse": 0.8538455589930422,
+        "r2": -0.1618855510134718
+      },
+      "weighted_mae": 0.5954381091628778
+    },
+    "status": "success"
+  },
+  "lightgbm": {
+    "model": null,
+    "config": {
+      "model_type": "gradient_boosting",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "random_state": 42
+      }
+    },
+    "train_time": 0,
+    "validation_metrics": {},
+    "status": "failed",
+    "error": "DataFrame for label cannot have multiple columns"
+  },
+  "svr": {
+    "model": null,
+    "config": {
+      "model_type": "svm",
+      "params": {
+        "kernel": "rbf",
+        "C": 1.0
+      }
+    },
+    "train_time": 0,
+    "validation_metrics": {},
+    "status": "failed",
+    "error": "y should be a 1d array, got an array of shape (6378, 5) instead."
+  },
+  "knn": {
+    "model": "KNeighborsRegressor()",
+    "config": {
+      "model_type": "neighbors",
+      "params": {
+        "n_neighbors": 5
+      }
+    },
+    "train_time": 0.2852060794830322,
+    "validation_metrics": {
+      "Tg": {
+        "mae": 0.6304790693953346,
+        "mse": 0.6203046218906059,
+        "rmse": 0.7875941987410813,
+        "r2": -0.17247327455821648
+      },
+      "FFV": {
+        "mae": 0.5046514670121691,
+        "mse": 0.46359652006085955,
+        "rmse": 0.6808792257521591,
+        "r2": 0.3271304973745992
+      },
+      "Tc": {
+        "mae": 0.6156021990488983,
+        "mse": 0.5807833601082619,
+        "rmse": 0.7620914381544133,
+        "r2": -0.05705388106887854
+      },
+      "Density": {
+        "mae": 0.6508758582514439,
+        "mse": 0.6693802400708558,
+        "rmse": 0.8181566109681299,
+        "r2": -0.13164732616472574
+      },
+      "Rg": {
+        "mae": 0.6743331624763963,
+        "mse": 0.7205252290546423,
+        "rmse": 0.8488375751901198,
+        "r2": -0.14829611438123358
+      },
+      "weighted_mae": 0.6151883512368485
+    },
+    "status": "success"
+  }
+}

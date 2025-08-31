@@ -1,0 +1,70 @@
+{
+  "submission_title": "NeurIPS Open Polymer Prediction 2025 - Competition Submission",
+  "timestamp": "2025-09-01T01:06:06.168117",
+  "submission_status": "READY",
+  "test_data_info": {
+    "samples": 3,
+    "features": 1000,
+    "smiles_count": 3
+  },
+  "model_info": {
+    "model_type": "XGBRegressor",
+    "feature_count": 1000,
+    "target_columns": [
+      "Tg",
+      "FFV",
+      "Tc",
+      "Density",
+      "Rg"
+    ]
+  },
+  "predictions_info": {
+    "samples_predicted": 3,
+    "targets_predicted": [
+      "Tg",
+      "FFV",
+      "Tc",
+      "Density",
+      "Rg"
+    ],
+    "prediction_range": {
+      "Tg": {
+        "min": 0.36557695269584656,
+        "max": 0.7037595510482788,
+        "mean": 0.5072645545005798
+      },
+      "FFV": {
+        "min": -0.19358719885349274,
+        "max": 0.5934436917304993,
+        "mean": 0.09818645566701889
+      },
+      "Tc": {
+        "min": 0.06366601586341858,
+        "max": 0.21044981479644775,
+        "mean": 0.14187787473201752
+      },
+      "Density": {
+        "min": -0.28836795687675476,
+        "max": -0.023617999628186226,
+        "mean": -0.13436298072338104
+      },
+      "Rg": {
+        "min": -0.2723959684371948,
+        "max": 0.5406495332717896,
+        "mean": 0.07703986018896103
+      }
+    }
+  },
+  "competition_details": {
+    "competition_name": "NeurIPS Open Polymer Prediction 2025",
+    "evaluation_metric": "Weighted Mean Absolute Error (wMAE)",
+    "target_properties": [
+      "Tg",
+      "FFV",
+      "Tc",
+      "Density",
+      "Rg"
+    ],
+    "submission_format": "CSV with SMILES and predicted values"
+  }
+}
